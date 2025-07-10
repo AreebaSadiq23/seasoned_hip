@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react';
+import Image from "next/image";
 
 const blogPosts = [
   {
@@ -172,9 +173,11 @@ const BlogPage = () => {
               <div className="grid grid-cols-3 gap-2">
                 {[1, 2, 3, 4, 5, 6].map((num, i) => (
                   <div key={i} className="aspect-square bg-gray-300 overflow-hidden rounded">
-                    <img 
+                    <Image 
                       src={`/images/${num}.jpg`} 
                       alt={`Instagram ${num}`} 
+                      width={300}
+                      height={300}
                       className="object-cover w-full h-full" 
                     />
                   </div>
@@ -190,9 +193,11 @@ const BlogPage = () => {
             ) : (
               filteredPosts.map((post, i) => (
                 <div key={i} className="bg-white rounded-lg overflow-hidden shadow-sm">
-                  <img 
+                  <Image 
                     src={post.image} 
                     alt={post.title} 
+                    width={400}
+                    height={250}
                     className="h-48 w-full object-cover" 
                   />
                   <div className="p-4">
