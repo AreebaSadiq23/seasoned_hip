@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const TestimonialSection = () => (
     <section className="w-full py-12 flex flex-col md:flex-row items-center justify-center bg-gray-50 gap-8">
         {/* Left: Testimonial Content */}
@@ -5,9 +7,11 @@ const TestimonialSection = () => (
             <span className="text-orange-500 font-semibold text-sm mb-2 dancing-script">What they say</span>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 berkshire-swash-regular">What our customers say <br/> about us</h2>
             <div className="flex items-center gap-4 mb-4">
-                <img
+                <Image
                     src="/images/2.jpg"
                     alt="Customer profile"
+                    width={64}
+                    height={64}
                     className="w-16 h-16 rounded-full object-cover border-4 border-orange-200 shadow"
                 />
                 <div>
@@ -26,9 +30,11 @@ const TestimonialSection = () => (
         </div>
         {/* Right: Image */}
         <div className="flex justify-center items-center w-full max-w-sm">
-            <img
+            <Image
                 src="/images/2.jpg"
                 alt="Happy customer"
+                width={320}
+                height={328}
                 className="object-cover w-full h-82 shadow-lg border-4 border-white"
             />
         </div>

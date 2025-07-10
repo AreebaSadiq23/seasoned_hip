@@ -1,5 +1,6 @@
 'use client'
 import React from "react";
+import Image from "next/image";
 
 const Hero = () => {
     return (
@@ -12,9 +13,8 @@ const Hero = () => {
                     </h1>
                     <p className="text-gray-600 dancing-script">
                         We are a company that makes and distributes low-calorie desserts. Our main product is
-                        made with the world's top chefs and available in stores worldwide. Our target audience
-                        is college students. We want to convey a sense of comfort, while at the same time being
-                        approachable.</p>
+                        made with the world&apos;s top chefs and available in stores worldwide. Our target audience
+                        is college students. We want to convey a sense of comfort, while at the same time being&nbsp;approachable.</p>
                     {/* Shop Now Button */}
                     <a href="#" className="hidden sm:inline-block bg-orange-500 text-white px-5 py-2 rounded-full font-semibold shadow hover:bg-orange-600 transition mt-4">
                         Shop Now
@@ -35,27 +35,33 @@ const Hero = () => {
                 <div className="flex flex-col gap-8 justify-center">
                     {/* Row 1 */}
                     <div className="flex items-start gap-4">
-                        <img
+                        <Image
                             src="/images/1.jpg"
                             alt="Feature 1"
+                            width={112}
+                            height={112}
                             className="w-28 h-28 object-cover shadow mt-1"
                         />
                         <p className="text-gray-600 text-sm max-w-xs berkshire-swash-regular">Join students from around the world and be part of a vibrant,supportive network.Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, molestias nihil labore optio delectus, itaque impedit adipisci ea ab ex praesentium, animi totam? Optio ducimus minima cum a facere ipsa.</p>
                     </div>
                     {/* Row 2 */}
                     <div className="flex items-start gap-4">
-                        <img
+                        <Image
                             src="/images/9.jpg"
                             alt="Feature 2"
+                            width={112}
+                            height={112}
                             className="w-28 h-28 object-cover shadow mt-1"
                         />
                         <p className="text-gray-600 text-sm max-w-xs berkshire-swash-regular">Experience innovative teaching methods and cutting-edge resources for your success.Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, molestias nihil labore optio delectus, itaque impedit adipisci ea ab ex praesentium, animi totam? Optio ducimus minima cum a facere ipsa.</p>
                     </div>
                     {/* Row 3 */}
                     <div className="flex items-start gap-4">
-                        <img
+                        <Image
                             src="/images/6.jpg"
                             alt="Feature 3"
+                            width={112}
+                            height={112}
                             className="w-28 h-28 object-cover shadow mt-1"
                         />
                         <p className="text-gray-600 text-sm max-w-xs berkshire-swash-regular">Fast, reliable, and scalable platform to support your academic journey.Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, molestias nihil labore optio delectus, itaque impedit adipisci ea ab ex praesentium, animi totam? Optio ducimus minima cum a facere ipsa.</p>

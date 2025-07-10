@@ -1,5 +1,6 @@
 'use client';
 import React from "react";
+import Image from "next/image";
 
 const PrSection = () => {
     const images = [1, 2, 3, 4, 5, 6];
@@ -55,10 +56,12 @@ const PrSection = () => {
                     </button>
                     <div className="flex gap-6">
                         {visibleImages.map((num, idx) => (
-                            <img
+                            <Image
                                 key={idx}
                                 src={`/carou/${num}.jpg`}
                                 alt={`Circle ${num}`}
+                                width={112}
+                                height={112}
                                 className="w-28 h-28 rounded-full object-cover shadow"
                             />
                         ))}

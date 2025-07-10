@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaSearch } from "react-icons/fa";
+import Image from "next/image";
 
 const categories = [
   { name: "Marble Cake", count: 12 },
@@ -73,7 +74,7 @@ export default function ShopPage() {
           <h2 className="font-semibold text-lg mb-1 text-zinc-500 dancing-script">Category</h2>
           <div className="w-62 h-1 bg-orange-300 mb-4 rounded" />
           <ul className="w-full mb-8 ">
-            {categories.map((cat, idx) => (
+            {categories.map((cat) => (
               <li key={cat.name} className="flex items-center  justify-between py-2 border-b last:border-b-0">
                 <span className="text-zinc-500 berkshire-swash-regular ">{cat.name}</span>
                 <span className="bg-orange-100 text-zinc-600 rounded-full px-2 text-xs ml-2">{cat.count}</span>
@@ -92,9 +93,9 @@ export default function ShopPage() {
           <h2 className="font-semibold text-lg mb-1 dancing-script text-zinc-500">Top Product</h2>
           <div className="w-64 h-1 bg-orange-500 mb-4 rounded" />
           <div className="flex flex-col gap-4 mb-8">
-            {topProducts.map((prod, idx) => (
-              <div key={idx} className="flex items-center gap-3">
-                <img src={prod.img} alt={prod.name} className="w-12 h-12 rounded-full object-cover border" />
+            {topProducts.map((prod) => (
+              <div key={prod.img} className="flex items-center gap-3">
+                <Image src={prod.img} alt={prod.name} width={48} height={48} className="w-12 h-12 rounded-full object-cover border" />
                 <div>
                   <div className="font-medium text-sm text-zinc-500 dancing-script">{prod.name}</div>
                   <div className="flex items-center gap-18">
@@ -109,7 +110,7 @@ export default function ShopPage() {
           <h2 className="font-semibold text-lg mb-1 text-zinc-500 dancing-script">Tags</h2>
           <div className="w-66 h-1 bg-orange-500 mb-4 rounded" />
           <div className="flex flex-wrap gap-2">
-            {tags.map((tag, idx) => (
+            {tags.map((tag) => (
               <span key={tag} className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs cursor-pointer hover:bg-blue-500 hover:text-white transition">{tag}</span>
             ))}
           </div>
@@ -136,9 +137,9 @@ export default function ShopPage() {
           </div>
           {/* Product Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 mt-20">
-            {products.map((prod, idx) => (
-              <div key={idx} className="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col items-center p-4">
-                <img src={prod.img} alt={prod.name} className="w-24 h-24 object-cover mb-3" />
+            {products.map((prod) => (
+              <div key={prod.img} className="bg-white rounded-lg shadow hover:shadow-lg transition flex flex-col items-center p-4">
+                <Image src={prod.img} alt={prod.name} width={96} height={96} className="w-24 h-24 object-cover mb-3" />
                 <div className="text-center mb-1 text-zinc-800 dancing-script font-bold">{prod.name}</div>
                 <div className="text-orange-600 font-bold berkshire-swash-regular mb-1">${prod.price}</div>
               </div>

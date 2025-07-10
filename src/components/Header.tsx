@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react';
+import Link from "next/link";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,10 +40,18 @@ const Header: React.FC = () => {
 
       {/* Center: Nav Items (hidden on mobile) */}
       <nav className="hidden md:flex gap-8 flex-1 justify-center dancing-script">
-        <a href="/" className="text-gray-800 font-medium hover:text-orange-500 transition">Home</a>
-        <a href="/shop" className="text-gray-800 font-medium hover:text-orange-500 transition">Shop</a>
-        <a href="/BlogPage" className="text-gray-800 font-medium hover:text-orange-500 transition">Blog</a>
-        <a href="/contact" className="text-gray-800 font-medium hover:text-orange-500 transition">Contact</a>
+        <Link href="/">
+          <a className="text-gray-800 font-medium hover:text-orange-500 transition">Home</a>
+        </Link>
+        <Link href="/shop">
+          <a className="text-gray-800 font-medium hover:text-orange-500 transition">Shop</a>
+        </Link>
+        <Link href="/BlogPage">
+          <a className="text-gray-800 font-medium hover:text-orange-500 transition">Blog</a>
+        </Link>
+        <Link href="/contact">
+          <a className="text-gray-800 font-medium hover:text-orange-500 transition">Contact</a>
+        </Link>
       </nav>
 
       {/* Right: Search and Button */}
@@ -97,9 +106,11 @@ const Header: React.FC = () => {
         </div>
 
         {/* Shop Now Button */}
-        <a href="/shop" className="hidden sm:inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 dancing-script py-3 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 transform">
-          Shop Now
-        </a>
+        <Link href="/shop">
+          <a className="hidden sm:inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 dancing-script py-3 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 transform">
+            Shop Now
+          </a>
+        </Link>
         {/* Hamburger for mobile */}
         <button className="md:hidden ml-2 p-2" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           <svg width="26" height="26" fill="none" stroke="#ff6600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
@@ -120,13 +131,23 @@ const Header: React.FC = () => {
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </button>
-            <a href="/" className="text-gray-800 font-medium text-lg hover:text-orange-500 transition" onClick={() => setMenuOpen(false)}>Home</a>
-            <a href="/shop" className="text-gray-800 font-medium text-lg hover:text-orange-500 transition" onClick={() => setMenuOpen(false)}>Shop</a>
-            <a href="/BlogPage" className="text-gray-800 font-medium text-lg hover:text-orange-500 transition" onClick={() => setMenuOpen(false)}>Blog</a>
-            <a href="/Contact" className="text-gray-800 font-medium text-lg hover:text-orange-500 transition" onClick={() => setMenuOpen(false)}>Contact</a>
-            <a href="/shop" className="bg-orange-500 text-white px-5 py-2 rounded-full font-semibold shadow hover:bg-orange-600 transition mt-4 text-center" onClick={() => setMenuOpen(false)}>
-              Shop Now
-            </a>
+            <Link href="/">
+              <a className="text-gray-800 font-medium text-lg hover:text-orange-500 transition" onClick={() => setMenuOpen(false)}>Home</a>
+            </Link>
+            <Link href="/shop">
+              <a className="text-gray-800 font-medium text-lg hover:text-orange-500 transition" onClick={() => setMenuOpen(false)}>Shop</a>
+            </Link>
+            <Link href="/BlogPage">
+              <a className="text-gray-800 font-medium text-lg hover:text-orange-500 transition" onClick={() => setMenuOpen(false)}>Blog</a>
+            </Link>
+            <Link href="/Contact">
+              <a className="text-gray-800 font-medium text-lg hover:text-orange-500 transition" onClick={() => setMenuOpen(false)}>Contact</a>
+            </Link>
+            <Link href="/shop">
+              <a className="bg-orange-500 text-white px-5 py-2 rounded-full font-semibold shadow hover:bg-orange-600 transition mt-4 text-center" onClick={() => setMenuOpen(false)}>
+                Shop Now
+              </a>
+            </Link>
           </div>
         </div>
       )}
