@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaSearch } from "react-icons/fa";
 import Image from "next/image";
+import WorkingHours from "../HeroSection/WorkingHours";
 
 const categories = [
   { name: "Marble Cake", count: 12 },
@@ -144,6 +145,7 @@ export default function ShopPage() {
                 <div className="text-orange-600 font-bold berkshire-swash-regular mb-1">${prod.price}</div>
               </div>
             ))}
+            <WorkingHours/>
           </div>
         </div>
       </div>
