@@ -5,7 +5,7 @@ import Image from "next/image";
 const PrSection = () => {
     const images = [1, 2, 3, 4, 5, 6];
     const [startIdx, setStartIdx] = React.useState(0);
-    const visibleCount = 6;
+    const visibleCount = 3; // Show only 3 images at a time
     const total = images.length;
 
     const handlePrev = () => {
@@ -44,31 +44,32 @@ const PrSection = () => {
                     </svg>
                 </div>
                 {/* Carousel with 3 visible images and navigation buttons */}
-                <div className="flex items-center gap-4 justify-center">
+                <div className="flex items-center gap-4 justify-center w-full max-w-2xl">
                     <button
                         onClick={handlePrev}
-                        className="p-2 rounded-full bg-white shadow hover:bg-gray-100 focus:outline-none"
+                        className="p-2 rounded-full bg-white shadow hover:bg-gray-100 focus:outline-none z-20"
                         aria-label="Previous"
                     >
                         <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
-                    <div className="flex gap-6">
+                    <div className="flex gap-6 w-full justify-center">
                         {visibleImages.map((num, idx) => (
-                            <Image
-                                key={idx}
-                                src={`/carou/${num}.jpg`}
-                                alt={`Circle ${num}`}
-                                width={112}
-                                height={112}
-                                className="w-28 h-28 rounded-full object-cover shadow"
-                            />
+                            <div key={idx} className="flex flex-col items-center">
+                                <Image
+                                    src={`/carou/${num}.jpg`}
+                                    alt={`Circle ${num}`}
+                                    width={112}
+                                    height={112}
+                                    className="w-28 h-28 rounded-full object-cover shadow border-4 border-white"
+                                />
+                            </div>
                         ))}
                     </div>
                     <button
                         onClick={handleNext}
-                        className="p-2 rounded-full bg-white shadow hover:bg-gray-100 focus:outline-none"
+                        className="p-2 rounded-full bg-white shadow hover:bg-gray-100 focus:outline-none z-20"
                         aria-label="Next"
                     >
                         <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
